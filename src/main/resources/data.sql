@@ -1,5 +1,0 @@
-insert into UNIVERSE values
-((NEXT VALUE FOR UNIVERSE_SEQ),'C-142','Cowboy'),
-((NEXT VALUE FOR UNIVERSE_SEQ),'C-132','Regular'),
-((NEXT VALUE FOR UNIVERSE_SEQ),'A-35','Reverse'),
-((NEXT VALUE FOR UNIVERSE_SEQ),'F-512','Pizza');

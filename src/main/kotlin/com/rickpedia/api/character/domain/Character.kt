@@ -7,19 +7,20 @@ import javax.persistence.*
 
 @Entity
 class Character(
-        @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "character_seq")
-        @SequenceGenerator(name = "character_seq", sequenceName = "CHARACTER_SEQ", allocationSize = 100)
-        var id: Long,
 
         @Column(nullable = false)
         var name: String,
 
-        var surname: String?,
-        var nickName: String?,
-        var birthDate: LocalDate?,
-        var deathDate: LocalDate?,
-
         @ManyToOne
-        var universe: Universe
+        var universe: Universe,
+
+        var surname: String? = null,
+        var nickName: String? = null,
+        var birthDate: LocalDate? = null,
+        var deathDate: LocalDate? = null,
+        
+        @Id
+        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "character_seq")
+        @SequenceGenerator(name = "character_seq", sequenceName = "CHARACTER_SEQ", allocationSize = 100)
+        var id: Long = 0L
 ) : Serializable

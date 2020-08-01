@@ -14,7 +14,8 @@ data class CharacterDto(
         val universe: UniverseDto) : BaseDto() {
 
     fun getAge(): String =
-            (deathDate!!.year - birthDate!!.year).toString() ?: "unknown"
+            if (deathDate != null && birthDate != null) "${deathDate.year - birthDate.year}"
+            else "unknown"
 
     fun isDead() = deathDate != null
 }

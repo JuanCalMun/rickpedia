@@ -6,20 +6,20 @@ import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
-data class Character(
+class Character(
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
-        val id: Long,
+        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "character_seq")
+        @SequenceGenerator(name = "character_seq", sequenceName = "CHARACTER_SEQ", allocationSize = 100)
+        var id: Long,
 
         @Column(nullable = false)
-        val name: String,
+        var name: String,
 
-        val surname: String?,
-        val nickName: String?,
-        val birthDate: LocalDate?,
-        val deathDate: LocalDate?,
+        var surname: String?,
+        var nickName: String?,
+        var birthDate: LocalDate?,
+        var deathDate: LocalDate?,
 
         @ManyToOne
-        @Column(nullable = false)
-        val universe: Universe
+        var universe: Universe
 ) : Serializable

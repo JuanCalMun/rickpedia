@@ -14,14 +14,10 @@ class UniverseMapper : ObjectMapper<Universe, UniverseDto> {
     override fun entityToDto(entity: Universe) = UniverseDto(
             id = entity.id,
             name = entity.name,
-            description = entity.description,
-            characters = characterMapper.entityToDtoList(entity.characters)
-    )
+            description = entity.description)
     
     override fun dtoToEntity(dto: UniverseDto) = Universe(
             id = dto.id,
             name = dto.name,
-            description = dto.description,
-            characters = characterMapper.dtoToEntityList(dto.characters)
-    )
+            description = dto.description)
 }

@@ -30,6 +30,6 @@ class CharacterMapper : ObjectMapper<Character, CharacterDto> {
             deathDate = dto.deathDate,
             universe = universeMapper.dtoToEntity(dto.universe)
     )
-
-
 }
+
+

@@ -1,6 +1,5 @@
 package com.rickpedia.api.universe.domain
 
-import com.rickpedia.api.character.domain.Character
 import java.io.Serializable
 import javax.persistence.*
 
@@ -10,9 +9,12 @@ class Universe(
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "universe_seq")
         @SequenceGenerator(name = "universe_seq", sequenceName = "UNIVERSE_SEQ", allocationSize = 100)
-        val id: Long,
-        val name: String,
-        val description: String,
-        @OneToMany
-        val characters: List<Character>
+        var id: Long,
+
+        var name: String,
+        var description: String
+
+//        TODO check viability of put relation here
+//        @OneToMany
+//        var characters: MutableList<Character>
 ) : Serializable

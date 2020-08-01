@@ -13,8 +13,9 @@ class UniverseProvider(
 
     fun findByUniverseId(universeId: Long): UniverseDto {
         val foundUniverse = universeRepository.findById(universeId)
-        if (foundUniverse.isPresent) throw EntityNotFound("Universe")
-        return universeMapper.entityToDto(foundUniverse.get())
+        if (foundUniverse.isPresent)
+            return universeMapper.entityToDto(foundUniverse.get())
+        throw EntityNotFound("Universe")
     }
 
     fun findAll() = universeMapper.entityToDtoList(universeRepository.findAll().toList())

@@ -1,6 +1,7 @@
 package com.rickpedia.api.universe.domain
 
 import com.rickpedia.api.character.domain.Character
+import java.io.Serializable
 import javax.persistence.*
 
 @Entity
@@ -14,4 +15,4 @@ class Universe(
         val description: String,
         @OneToMany
         val characters: List<Character>
-)
+) : Serializable

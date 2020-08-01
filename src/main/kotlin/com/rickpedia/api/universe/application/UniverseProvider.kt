@@ -1,6 +1,6 @@
 package com.rickpedia.api.universe.application
 
-import com.rickpedia.api.shared.domain.exceptions.EntityNotFound
+import com.rickpedia.api.shared.domain.exceptions.customs.EntityNotFoundCustomException
 import com.rickpedia.api.universe.domain.UniverseDto
 import com.rickpedia.api.universe.domain.UniverseMapper
 import com.rickpedia.api.universe.domain.UniverseRepository
@@ -15,7 +15,7 @@ class UniverseProvider(
         val foundUniverse = universeRepository.findById(universeId)
         if (foundUniverse.isPresent)
             return universeMapper.entityToDto(foundUniverse.get())
-        throw EntityNotFound("Universe")
+        throw EntityNotFoundCustomException("Universe")
     }
 
     fun findAll() = universeMapper.entityToDtoList(universeRepository.findAll().toList())

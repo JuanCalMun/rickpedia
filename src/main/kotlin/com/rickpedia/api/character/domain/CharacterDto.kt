@@ -1,6 +1,6 @@
 package com.rickpedia.api.character.domain
 
-import com.rickpedia.api.shared.domain.BaseDto
+import com.rickpedia.api.shared.domain.`object`.BaseDto
 import com.rickpedia.api.universe.domain.UniverseDto
 import java.time.LocalDate
 

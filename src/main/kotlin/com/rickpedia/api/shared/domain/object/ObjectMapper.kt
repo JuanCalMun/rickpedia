@@ -1,4 +1,4 @@
-package com.rickpedia.api.shared.domain
+package com.rickpedia.api.shared.domain.`object`
 
 interface ObjectMapper<E, D : BaseDto> {
     fun entityToDto(entity: E): D

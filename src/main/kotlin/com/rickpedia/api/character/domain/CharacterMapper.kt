@@ -1,15 +1,12 @@
 package com.rickpedia.api.character.domain
 
-import com.rickpedia.api.shared.domain.ObjectMapper
+import com.rickpedia.api.shared.domain.`object`.ObjectMapper
 import com.rickpedia.api.universe.domain.UniverseMapper
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class CharacterMapper : ObjectMapper<Character, CharacterDto> {
-
-    @Autowired
-    private lateinit var universeMapper: UniverseMapper
+class CharacterMapper(private val universeMapper: UniverseMapper)
+    : ObjectMapper<Character, CharacterDto> {
 
     override fun entityToDto(entity: Character) = CharacterDto(
             id = entity.id,
@@ -31,5 +28,3 @@ class CharacterMapper : ObjectMapper<Character, CharacterDto> {
             universe = universeMapper.dtoToEntity(dto.universe)
     )
 }
-
-

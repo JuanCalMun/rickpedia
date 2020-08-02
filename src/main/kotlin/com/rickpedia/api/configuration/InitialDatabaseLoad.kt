@@ -1,9 +1,9 @@
 package com.rickpedia.api.configuration
 
-import com.rickpedia.api.character.domain.Character
-import com.rickpedia.api.character.domain.CharacterRepository
-import com.rickpedia.api.universe.domain.Universe
-import com.rickpedia.api.universe.domain.UniverseRepository
+import com.rickpedia.api.app.character.domain.Character
+import com.rickpedia.api.app.character.domain.CharacterRepository
+import com.rickpedia.api.app.universe.domain.Universe
+import com.rickpedia.api.app.universe.domain.UniverseRepository
 import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

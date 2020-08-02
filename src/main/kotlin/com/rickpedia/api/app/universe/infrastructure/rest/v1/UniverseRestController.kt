@@ -19,6 +19,6 @@ class UniverseRestController(
             universeProvider.findByUniverseId(universeId)
 
     @PostMapping
-    fun getOneUniverseById(@RequestBody universeToCreate: UniverseCreatorCommand) =
+    fun createUniverse(@RequestBody universeToCreate: UniverseCreatorCommand) =
             universeCreator.create(universeToCreate)
 }

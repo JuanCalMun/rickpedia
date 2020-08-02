@@ -4,4 +4,6 @@ import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface UniverseRepository : CrudRepository<Universe, Long>
+interface UniverseRepository : CrudRepository<Universe, Long> {
+    fun existsByName(name: String): Boolean
+}

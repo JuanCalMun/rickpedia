@@ -2,11 +2,11 @@ package com.rickpedia.api.app.character.application.data
 
 import com.rickpedia.api.app.character.domain.Character
 import com.rickpedia.api.app.commons.application.objects.DtoMapper
-import com.rickpedia.api.app.universe.application.data.UniverseDtoMapper
+import com.rickpedia.api.app.universe.application.commons.UniverseMapper
 import org.springframework.stereotype.Component
 
 @Component
-class CharacterMapper(private val universeDtoMapper: UniverseDtoMapper)
+class CharacterMapper(private val universeMapper: UniverseMapper)
     : DtoMapper<Character, CharacterDto> {
 
     override fun entityToDto(entity: Character) = CharacterDto(
@@ -16,7 +16,7 @@ class CharacterMapper(private val universeDtoMapper: UniverseDtoMapper)
             nickName = entity.nickName,
             birthDate = entity.birthDate,
             deathDate = entity.deathDate,
-            universe = universeDtoMapper.entityToDto(entity.universe)
+            universe = universeMapper.entityToDto(entity.universe)
     )
 
     override fun dtoToEntity(dto: CharacterDto) = Character(
@@ -26,6 +26,6 @@ class CharacterMapper(private val universeDtoMapper: UniverseDtoMapper)
             nickName = dto.nickName,
             birthDate = dto.birthDate,
             deathDate = dto.deathDate,
-            universe = universeDtoMapper.dtoToEntity(dto.universe)
+            universe = universeMapper.dtoToEntity(dto.universe)
     )
 }

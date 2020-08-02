@@ -1,4 +1,4 @@
-package com.rickpedia.api.app.universe.application.data
+package com.rickpedia.api.app.universe.application.commons
 
 import com.rickpedia.api.app.commons.application.objects.BaseDto
 

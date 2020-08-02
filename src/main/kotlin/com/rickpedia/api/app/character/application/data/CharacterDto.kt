@@ -1,7 +1,7 @@
 package com.rickpedia.api.app.character.application.data
 
 import com.rickpedia.api.app.commons.application.objects.BaseDto
-import com.rickpedia.api.app.universe.application.data.UniverseDto
+import com.rickpedia.api.app.universe.application.commons.UniverseDto
 import java.time.LocalDate
 
 data class CharacterDto(

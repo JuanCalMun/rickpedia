@@ -12,7 +12,7 @@ data class CharacterDto(
         val birthDate: LocalDate? = null,
         val deathDate: LocalDate? = null,
         val id: Long = 0L) : BaseDto() {
-
+ 
     fun getAge(): String =
             if (deathDate != null && birthDate != null) "${deathDate.year - birthDate.year}"
             else "unknown"

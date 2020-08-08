@@ -1,8 +1,8 @@
 package com.rickpedia.api.app.commons.domain.exceptions.customs
 
 import com.rickpedia.api.app.commons.domain.exceptions.CustomException
+import com.rickpedia.api.app.commons.domain.exceptions.EntityEnum
 
 class EntityAllreadyExistsCustomException(
-        entityName: String,
-        entityIdValue: String
-) : CustomException("Allready exists the $entityName: $entityIdValue")
+        entity: EntityEnum
+) : CustomException("The ${entity.name} allready exists")

@@ -1,22 +1,22 @@
-package com.rickpedia.api.app.universe.application.provide
+package com.rickpedia.api.app.universe.application.find
 
 import com.rickpedia.api.app.commons.domain.exceptions.customs.EntityNotFoundCustomException
 import com.rickpedia.api.app.universe.application.commons.UniverseDto
-import com.rickpedia.api.app.universe.application.commons.UniverseMapper
+import com.rickpedia.api.app.universe.application.commons.UniverseDtoMapper
 import com.rickpedia.api.app.universe.domain.UniverseRepository
 import org.springframework.stereotype.Service
 
 @Service
-class UniverseProvider(
+class UniverseFinder(
         private val universeRepository: UniverseRepository,
-        private val universeMapper: UniverseMapper) {
+        private val universeDtoMapper: UniverseDtoMapper) {
 
     fun findByUniverseId(universeId: Long): UniverseDto {
         val foundUniverse = universeRepository.findById(universeId)
         if (foundUniverse.isPresent)
-            return universeMapper.entityToDto(foundUniverse.get())
+            return universeDtoMapper.entityToDto(foundUniverse.get())
         throw EntityNotFoundCustomException("Universe")
     }
 
-    fun findAll() = universeMapper.entityToDtoList(universeRepository.findAll().toList())
+    fun findAll() = universeDtoMapper.entityToDtoList(universeRepository.getAll().toList())
 }

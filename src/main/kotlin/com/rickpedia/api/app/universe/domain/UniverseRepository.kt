@@ -1,9 +1,10 @@
 package com.rickpedia.api.app.universe.domain
 
-import org.springframework.data.repository.CrudRepository
-import org.springframework.stereotype.Repository
+import java.util.*
 
-@Repository
-interface UniverseRepository : CrudRepository<Universe, Long> {
+interface UniverseRepository {
+    fun getAll(): MutableIterable<Universe>
+    fun save(universe: Universe): Universe
+    fun findById(universeId: Long): Optional<Universe>
     fun existsByName(name: String): Boolean
 }

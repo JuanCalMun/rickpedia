@@ -1,4 +1,4 @@
-package com.rickpedia.api.app.universe.application.commons.commands
+package com.rickpedia.api.app.universe.application.create
 
 import com.rickpedia.api.app.commons.application.commands.BaseCommand
 

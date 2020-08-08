@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController
 class InfrastructureRestController(
         private val characterProvider: CharacterProvider) {
     @GetMapping
-    fun getAllUniverses() = characterProvider.findAll()
+    fun getAllCharacters() = characterProvider.findAll()
 
     @GetMapping("/{characterId}")
-    fun getOneUniverseById(@PathVariable characterId: Long) =
+    fun getOneCharacterById(@PathVariable characterId: Long) =
             characterProvider.findByCharacterId(characterId)
 
 }

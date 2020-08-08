@@ -4,7 +4,7 @@ import java.io.Serializable
 import javax.persistence.*
 
 @Entity
-class Universe(
+data class Universe(
         var name: String,
         var description: String,
 

@@ -6,5 +6,6 @@ interface UniverseRepository {
     fun getAll(): MutableIterable<Universe>
     fun save(universe: Universe): Universe
     fun findById(universeId: Long): Optional<Universe>
+    fun findByCriteria(universe: Universe): Optional<Universe>
     fun existsByName(name: String): Boolean
 }

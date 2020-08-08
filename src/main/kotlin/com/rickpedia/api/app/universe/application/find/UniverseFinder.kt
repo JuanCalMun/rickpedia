@@ -19,4 +19,8 @@ class UniverseFinder(
     }
 
     fun findAll() = universeDtoMapper.entityToDtoList(universeRepository.getAll().toList())
+
+    fun findByCriteria(universeFinderCommand: UniverseFinderCommand) {
+        
+    }
 }
